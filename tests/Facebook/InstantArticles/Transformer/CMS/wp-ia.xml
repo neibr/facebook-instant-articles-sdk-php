@@ -179,6 +179,18 @@
           <div class="fb-post" data-href="https://www.facebook.com/some-page/posts/some-post"></div>
         </iframe>
       </figure>
+      <figure class="op-interactive">
+        <iframe class="no-margin">
+          <script type="text/javascript" src="//cdn.playbuzz.com/widget/feed.js"></script>
+          <div class="pb_feed" data-key="oembed" data-game="https://www.playbuzz.com/sportsillustrated/can-you-guess-the-olympic-sport-by-the-athlete-s-facial-expression" data-recommend="False" data-tags="ALL"></div>
+        </iframe>
+      </figure>
+      <figure class="op-interactive">
+        <iframe class="no-margin">
+          <script type="text/javascript" src="//cdn.playbuzz.com/widget/feed.js"></script>
+          <div class="pb_feed" data-key="oembed" data-game="https://www.playbuzz.com/finnmorgan10/hugh-jackman-is-officially-saying-goodbye-to-wolverine" data-recommend="False" data-tags="ALL"></div>
+        </iframe>
+      </figure>
     </article>
   </body>
 </html>
