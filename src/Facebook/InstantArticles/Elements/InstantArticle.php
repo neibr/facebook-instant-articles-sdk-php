@@ -246,28 +246,7 @@ class InstantArticle extends Element implements Container, InstantArticleInterfa
      */
     public function withChildren($children)
     {
-        Type::enforceArrayOf(
-            $children,
-            [
-                Ad::getClassName(),
-                Analytics::getClassName(),
-                AnimatedGIF::getClassName(),
-                Audio::getClassName(),
-                Blockquote::getClassName(),
-                Image::getClassName(),
-                H1::getClassName(),
-                H2::getClassName(),
-                Interactive::getClassName(),
-                ListElement::getClassName(),
-                Map::getClassName(),
-                Paragraph::getClassName(),
-                Pullquote::getClassName(),
-                RelatedArticles::getClassName(),
-                Slideshow::getClassName(),
-                SocialEmbed::getClassName(),
-                Video::getClassName()
-            ]
-        );
+        Type::enforceArrayOf($children, $this->getCompatibleElements());
         $this->children = $children;
 
         return $this;
@@ -304,28 +283,7 @@ class InstantArticle extends Element implements Container, InstantArticleInterfa
      */
     public function addChild($child)
     {
-        Type::enforce(
-            $child,
-            [
-                Ad::getClassName(),
-                Analytics::getClassName(),
-                AnimatedGIF::getClassName(),
-                Audio::getClassName(),
-                Blockquote::getClassName(),
-                Image::getClassName(),
-                H1::getClassName(),
-                H2::getClassName(),
-                Interactive::getClassName(),
-                ListElement::getClassName(),
-                Map::getClassName(),
-                Paragraph::getClassName(),
-                Pullquote::getClassName(),
-                RelatedArticles::getClassName(),
-                Slideshow::getClassName(),
-                SocialEmbed::getClassName(),
-                Video::getClassName()
-            ]
-        );
+        Type::enforce($child, $this->getCompatibleElements());
         $this->children[] = $child;
 
         return $this;
@@ -340,28 +298,7 @@ class InstantArticle extends Element implements Container, InstantArticleInterfa
      */
     public function unshiftChild($child)
     {
-        Type::enforce(
-            $child,
-            [
-                Ad::getClassName(),
-                Analytics::getClassName(),
-                AnimatedGIF::getClassName(),
-                Audio::getClassName(),
-                Blockquote::getClassName(),
-                Image::getClassName(),
-                H1::getClassName(),
-                H2::getClassName(),
-                Interactive::getClassName(),
-                ListElement::getClassName(),
-                Map::getClassName(),
-                Paragraph::getClassName(),
-                Pullquote::getClassName(),
-                RelatedArticles::getClassName(),
-                Slideshow::getClassName(),
-                SocialEmbed::getClassName(),
-                Video::getClassName()
-            ]
-        );
+        Type::enforce($child, $this->getCompatibleElements());
         array_unshift($this->children, $child);
 
         return $this;
@@ -600,5 +537,31 @@ class InstantArticle extends Element implements Container, InstantArticleInterfa
         }
         // Case no paragraph exists, we return an empty paragraph
         return Paragraph::create();
+    }
+
+    /**
+     * @return array List classes of compatible elements
+     */
+    protected function getCompatibleElements()
+    {
+        return [
+            Ad::getClassName(),
+            Analytics::getClassName(),
+            AnimatedGIF::getClassName(),
+            Audio::getClassName(),
+            Blockquote::getClassName(),
+            Image::getClassName(),
+            H1::getClassName(),
+            H2::getClassName(),
+            Interactive::getClassName(),
+            ListElement::getClassName(),
+            Map::getClassName(),
+            Paragraph::getClassName(),
+            Pullquote::getClassName(),
+            RelatedArticles::getClassName(),
+            Slideshow::getClassName(),
+            SocialEmbed::getClassName(),
+            Video::getClassName()
+        ];
     }
 }
